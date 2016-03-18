@@ -87,6 +87,14 @@ describe('FLUX-ANGULAR', function() {
       cb = jasmine.createSpy('callback');
     }));
 
+
+    describe('Ensure Environment configuration', function() {
+      it('should loaded angular 1.5', function(){
+        expect(angular.version.major).toEqual(1);
+        expect(angular.version.minor).toEqual(5);
+      });
+    });
+
     describe('initializing state', function() {
       it('should not expose the private tree property', function() {
         expect(MyStore.__tree).toBeUndefined();
